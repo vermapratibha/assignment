@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pk.model.Department;
 import com.pk.model.Employee;
 import com.pk.service.EmpService;
+import java.util.List;
 
 @RestController
 public class EmployeeController {
@@ -24,8 +24,8 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/api")
-	public ResponseEntity<Department> getEmp2(@RequestParam int DName){
-		return ResponseEntity.ok(empService.getDeptByDname(DName));
+	public ResponseEntity<List<Employee>> getEmp2(@RequestParam int DName){
+		return ResponseEntity.ok(empService.getEmpByDname(DName));
 	}
 
 }

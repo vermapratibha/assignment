@@ -2,7 +2,7 @@ package com.pk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import java.util.List;
 import com.pk.model.Department;
 import com.pk.model.Employee;
 import com.pk.repository.DeptRepo;
@@ -23,5 +23,10 @@ public class EmpService {
 
 	public Department getDeptByDname(int dName) {
 		return deptRepo.findById(dName).get();
+	}
+
+	public List<Employee> getEmpByDname(int dName) {
+		// TODO Auto-generated method stub
+		return empRepo.empByDname(dName);
 	}
 }
